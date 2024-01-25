@@ -10,8 +10,14 @@ export const CounterProvider = ({children})=> {
       setCounter(prev=> prev+1)
     }
     
+  const myContext = {
+    counter,
+    addOne,
+    tomatoes:""
+}
+
     return(
-        <CounterContext.Provider value={{counter,addOne}}>
+        <CounterContext.Provider value={myContext}>
             {children}
         </CounterContext.Provider>
     )
